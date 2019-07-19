@@ -21,12 +21,14 @@ namespace SistemaFarmacia
 
         private void ConsultaDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            cUsuarios cusuario = new cUsuarios();
+            cusuario.Show();
         }
 
         private void RegistroDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            rUsuarios rusuario = new rUsuarios();
+            rusuario.Show();
         }
     }
 }

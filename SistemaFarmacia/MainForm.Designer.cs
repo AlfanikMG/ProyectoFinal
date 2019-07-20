@@ -35,6 +35,7 @@
             this.consultaDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@
             // registrosToolStripMenuItem
             // 
             this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroDeUsuarioToolStripMenuItem});
+            this.registroDeUsuarioToolStripMenuItem,
+            this.registroDeClientesToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -94,6 +96,13 @@
             this.reporteDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.reporteDeUsuariosToolStripMenuItem.Text = "Reporte de usuarios";
             // 
+            // registroDeClientesToolStripMenuItem
+            // 
+            this.registroDeClientesToolStripMenuItem.Name = "registroDeClientesToolStripMenuItem";
+            this.registroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registroDeClientesToolStripMenuItem.Text = "Registro de Clientes";
+            this.registroDeClientesToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeClientesToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +128,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultaDeUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeClientesToolStripMenuItem;
     }
 }
 

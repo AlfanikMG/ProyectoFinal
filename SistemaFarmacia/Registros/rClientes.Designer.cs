@@ -28,25 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ClientesId = new System.Windows.Forms.Label();
-            this.BalanceLabel = new System.Windows.Forms.Label();
             this.DireccionLabel = new System.Windows.Forms.Label();
             this.Celularlabel = new System.Windows.Forms.Label();
             this.CedulaLabel = new System.Windows.Forms.Label();
             this.NombresLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.NombresTextBox = new System.Windows.Forms.TextBox();
+            this.CedulaTextBox = new System.Windows.Forms.TextBox();
+            this.ClientesIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.CelularTextBox = new System.Windows.Forms.TextBox();
+            this.DireccionTextBox = new System.Windows.Forms.TextBox();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TelefonoTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // ClientesId
@@ -57,15 +58,6 @@
             this.ClientesId.Size = new System.Drawing.Size(53, 13);
             this.ClientesId.TabIndex = 0;
             this.ClientesId.Text = "ClientesId";
-            // 
-            // BalanceLabel
-            // 
-            this.BalanceLabel.AutoSize = true;
-            this.BalanceLabel.Location = new System.Drawing.Point(25, 176);
-            this.BalanceLabel.Name = "BalanceLabel";
-            this.BalanceLabel.Size = new System.Drawing.Size(46, 13);
-            this.BalanceLabel.TabIndex = 1;
-            this.BalanceLabel.Text = "Balance";
             // 
             // DireccionLabel
             // 
@@ -103,47 +95,40 @@
             this.NombresLabel.TabIndex = 5;
             this.NombresLabel.Text = "Nombres";
             // 
-            // textBox1
+            // NombresTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(98, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 10;
+            this.NombresTextBox.Location = new System.Drawing.Point(98, 46);
+            this.NombresTextBox.Name = "NombresTextBox";
+            this.NombresTextBox.Size = new System.Drawing.Size(158, 20);
+            this.NombresTextBox.TabIndex = 10;
             // 
-            // textBox2
+            // CedulaTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 72);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 20);
-            this.textBox2.TabIndex = 11;
+            this.CedulaTextBox.Location = new System.Drawing.Point(98, 72);
+            this.CedulaTextBox.Name = "CedulaTextBox";
+            this.CedulaTextBox.Size = new System.Drawing.Size(158, 20);
+            this.CedulaTextBox.TabIndex = 11;
             // 
-            // numericUpDown1
+            // ClientesIdNumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(98, 20);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(91, 20);
-            this.numericUpDown1.TabIndex = 12;
+            this.ClientesIdNumericUpDown.Location = new System.Drawing.Point(98, 20);
+            this.ClientesIdNumericUpDown.Name = "ClientesIdNumericUpDown";
+            this.ClientesIdNumericUpDown.Size = new System.Drawing.Size(91, 20);
+            this.ClientesIdNumericUpDown.TabIndex = 12;
             // 
-            // textBox3
+            // CelularTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(98, 124);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(157, 20);
-            this.textBox3.TabIndex = 13;
+            this.CelularTextBox.Location = new System.Drawing.Point(98, 124);
+            this.CelularTextBox.Name = "CelularTextBox";
+            this.CelularTextBox.Size = new System.Drawing.Size(157, 20);
+            this.CelularTextBox.TabIndex = 13;
             // 
-            // textBox4
+            // DireccionTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(98, 150);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(157, 20);
-            this.textBox4.TabIndex = 14;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(98, 176);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(156, 20);
-            this.textBox5.TabIndex = 15;
+            this.DireccionTextBox.Location = new System.Drawing.Point(98, 150);
+            this.DireccionTextBox.Name = "DireccionTextBox";
+            this.DireccionTextBox.Size = new System.Drawing.Size(157, 20);
+            this.DireccionTextBox.TabIndex = 14;
             // 
             // BuscarButton
             // 
@@ -157,6 +142,7 @@
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = false;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // GuardarButton
             // 
@@ -170,6 +156,7 @@
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = false;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // EliminarButton
             // 
@@ -183,6 +170,7 @@
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = false;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // NuevoButton
             // 
@@ -196,13 +184,14 @@
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = false;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
-            // textBox6
+            // TelefonoTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(98, 98);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(158, 20);
-            this.textBox6.TabIndex = 17;
+            this.TelefonoTextBox.Location = new System.Drawing.Point(98, 98);
+            this.TelefonoTextBox.Name = "TelefonoTextBox";
+            this.TelefonoTextBox.Size = new System.Drawing.Size(158, 20);
+            this.TelefonoTextBox.TabIndex = 17;
             // 
             // label1
             // 
@@ -213,19 +202,22 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Telefono";
             // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
             // rClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 261);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.TelefonoTextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DireccionTextBox);
+            this.Controls.Add(this.CelularTextBox);
+            this.Controls.Add(this.ClientesIdNumericUpDown);
+            this.Controls.Add(this.CedulaTextBox);
+            this.Controls.Add(this.NombresTextBox);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.EliminarButton);
@@ -234,11 +226,11 @@
             this.Controls.Add(this.CedulaLabel);
             this.Controls.Add(this.Celularlabel);
             this.Controls.Add(this.DireccionLabel);
-            this.Controls.Add(this.BalanceLabel);
             this.Controls.Add(this.ClientesId);
             this.Name = "rClientes";
             this.Text = "rClientes";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,7 +239,6 @@
         #endregion
 
         private System.Windows.Forms.Label ClientesId;
-        private System.Windows.Forms.Label BalanceLabel;
         private System.Windows.Forms.Label DireccionLabel;
         private System.Windows.Forms.Label Celularlabel;
         private System.Windows.Forms.Label CedulaLabel;
@@ -256,13 +247,13 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button BuscarButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox NombresTextBox;
+        private System.Windows.Forms.TextBox CedulaTextBox;
+        private System.Windows.Forms.NumericUpDown ClientesIdNumericUpDown;
+        private System.Windows.Forms.TextBox CelularTextBox;
+        private System.Windows.Forms.TextBox DireccionTextBox;
+        private System.Windows.Forms.TextBox TelefonoTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }

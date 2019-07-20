@@ -29,7 +29,7 @@ namespace SistemaFarmacia.Registros
             FechaIngresoDateTimePicker.Value = DateTime.Now;
             MyErrorProvider.Clear();
         }
-        private void NuevoButton_Click(object sender, EventArgs e)
+         private void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
@@ -94,6 +94,7 @@ namespace SistemaFarmacia.Registros
 
                 paso = false;
             }
+
 
             return paso;
         }

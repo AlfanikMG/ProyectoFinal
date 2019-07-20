@@ -30,5 +30,11 @@ namespace SistemaFarmacia
             rUsuarios rusuario = new rUsuarios();
             rusuario.Show();
         }
+
+        private void RegistroDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rClientes clientes = new rClientes();
+            clientes.Show();
+        }
     }
 }

@@ -17,23 +17,44 @@ namespace SistemaFarmacia.Registros
         public List<ProductoDetalles> Detalle { get; set; }
         public rVentas()
         {
-            this.Detalle = new List<ProductoDetalles>();
             InitializeComponent();
+            this.Detalle = new List<ProductoDetalles>();
+            ProductoComboBox.Text = null;
+            
+
+            LLenarProducto();
         }
         private void CargaGrid()
         {
             ProductoDataGridView.DataSource = null;
             ProductoDataGridView.DataSource = this.Detalle;
         }
+        private void LlenarPrecio()
+        {
+            Repositorio<Productos> repositorio = new Repositorio<Productos>();
+            List<Productos> lista = repositorio.GetList(c => c.Descripcion == ProductoComboBox.Text);
+            foreach (var item in lista)
+            {
+                PrecioNumericUpDown.Value = item.Precio;
+            }
+        }
+
+
+        private void LLenarProducto()
+        {
+            Repositorio<Productos> db = new Repositorio<Productos>(new DAL.SistemaFarmaciaContexto());
+            var lista = new List<Productos>();
+            lista = db.GetList(l => true);
+            ProductoComboBox.DataSource = lista;
+            ProductoComboBox.DisplayMember = "Descripcion";
+            ProductoComboBox.ValueMember = "ProductoId";
+        }
         private void Limpiar()
         {
             VentaIdNumericUpDown.Value = 0;
             ClienteComboBox.Text = string.Empty;
-            ValorNumericUpDown.Value = 0;
-            DevueltaNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
             PrecioNumericUpDown.Value = 0;
-            ValorNumericUpDown.Value = 0;
             SubTotalNumericUpDown.Value = 0;
             ItbisNumericUpDown.Value = 0;
             TotalNumericUpDown.Value = 0;
@@ -44,7 +65,7 @@ namespace SistemaFarmacia.Registros
         {
             Ventas ventas = new Ventas();
             ventas.ClienteId = (int)VentaIdNumericUpDown.Value;
-            ventas.Valor = ValorNumericUpDown.Value;
+            ventas.Valor = PrecioNumericUpDown.Value;
             ventas.Devuelta = DevueltaNumericUpDown.Value;
             ventas.Fecha = FechaDateTimePicker.Value;
             ventas.Precio = PrecioNumericUpDown.Value;
@@ -84,16 +105,12 @@ namespace SistemaFarmacia.Registros
             return paso;
         }
 
-        private void NuevoButton_Click(object sender, EventArgs e)
-        {
-            Limpiar();
 
-        }
         private void LlenarCampo(Ventas ventas)
         {
             VentaIdNumericUpDown.Value = ventas.VentaId;
             ClienteComboBox.Text = ventas.ClienteId.ToString();
-            ValorNumericUpDown.Value = ventas.VentaId;
+            PrecioNumericUpDown.Value = ventas.VentaId;
             DevueltaNumericUpDown.Value = ventas.VentaId;
             FechaDateTimePicker.Value = ventas.Fecha;
             PrecioNumericUpDown.Value = ventas.Precio;
@@ -112,7 +129,59 @@ namespace SistemaFarmacia.Registros
             Ventas ventas = dbe.Buscar((int)((int)VentaIdNumericUpDown.Value));
             return (ventas != null);
         }
+        public void CalcularItbis()
+        {
+            decimal itbis = 0;
+            foreach (var item in Detalle)
+            {
+                itbis += item.Itbis;
+            }
+            ItbisNumericUpDown.Value = itbis;
+         }
+        public void CalcularTotal()
+        {
+            decimal total = 0;
+            foreach (var item in Detalle)
+            {
+                total += (item.Valor) + item.Itbis;
+            }
+           TotalNumericUpDown.Value = total;
+        }
 
+        public void CalcularSubtotal()
+        {
+            decimal subtotal = 0;
+            foreach (var item in Detalle)
+            {
+                subtotal += item.Valor;
+            }
+            SubTotalNumericUpDown.Value = subtotal;
+        }
+        
+        public string id_mat;
+        private bool ExisteEnGrid()
+        {
+
+            bool paso = true;
+
+            if(ProductoDataGridView.RowCount > 0)
+            {
+                id_mat = ProductoComboBox.SelectedValue.ToString();
+                for (int i = 0; i < ProductoDataGridView.RowCount; i++)
+                {
+                    if (Convert.ToInt16(ProductoDataGridView.Rows[i].Cells["Id"].Value) == Convert.ToInt16(id_mat))
+                    {
+                        MessageBox.Show("El material ya ha sido ingresado");
+                        paso = false;
+
+                    }
+                }
+
+            }
+
+            return paso;
+
+        }
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             if (!Validar())
@@ -180,6 +249,64 @@ namespace SistemaFarmacia.Registros
 
         }
 
+        private void NuevoButton_Click_1(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void ProductoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LlenarPrecio();
+            if (CantidadNumericUpDown.Text != "0")
+            {
+                //LlenarImporte();
+            }
+            LlenarPrecio();
+        }
+
        
+        private void AgregarDetalleButton_Click(object sender, EventArgs e)
+        {
+            List<ProductoDetalles> detalles = new List<ProductoDetalles>();
+            Repositorio<Ventas> db = new Repositorio<Ventas>(new DAL.SistemaFarmaciaContexto());
+            if (ProductoDataGridView.DataSource != null)
+                this.Detalle = (List<ProductoDetalles>)ProductoDataGridView.DataSource;
+
+            if (ExisteEnGrid() == false)
+            {
+                MyerrorProvider.SetError(ProductoComboBox, "El Material ya existe en el Grid");
+                ProductoComboBox.Focus();
+
+                return;
+            }
+
+            this.Detalle.Add(new ProductoDetalles()
+            {
+                Id = (int)ProductoComboBox.SelectedValue,
+                VentaId = (int)VentaIdNumericUpDown.Value,
+                Producto = ProductoComboBox.Text,
+                Cantidad = (int)CantidadNumericUpDown.Value,
+                Valor = PrecioNumericUpDown.Value * CantidadNumericUpDown.Value,
+                Itbis = (PrecioNumericUpDown.Value * CantidadNumericUpDown.Value) * 0.18m,
+            });
+
+            CargaGrid();
+
+            CalcularSubtotal();
+            CalcularItbis();
+            CalcularTotal();
+            ProductoComboBox.Text = null;
+            PrecioNumericUpDown.Value = 0;
+            CantidadNumericUpDown.Value = 0;
+        }
+
+        private void NuevoProductoButton_Click(object sender, EventArgs e)
+        {
+            rProductos productos = new rProductos();
+            productos.ShowDialog();
+            LLenarProducto();
+
+
+        }
     }
 }

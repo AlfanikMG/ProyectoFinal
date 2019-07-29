@@ -31,19 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.DescripcionLabel = new System.Windows.Forms.Label();
             this.ClienteIdLabel = new System.Windows.Forms.Label();
-            this.ValorLabel = new System.Windows.Forms.Label();
-            this.ValorNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.DevueltaLabel = new System.Windows.Forms.Label();
             this.DevueltaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.FechaLabel = new System.Windows.Forms.Label();
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ValorNmericUpDown = new System.Windows.Forms.NumericUpDown();
             this.PrecioNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.AgregarDetalleButton = new System.Windows.Forms.Button();
+            this.NuevoProductoButton = new System.Windows.Forms.Button();
             this.CantidadNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,10 +60,8 @@
             this.ItbisNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.TotalNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.ValorNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DevueltaNumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ValorNmericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoDataGridView)).BeginInit();
@@ -96,24 +90,6 @@
             this.ClienteIdLabel.Size = new System.Drawing.Size(51, 17);
             this.ClienteIdLabel.TabIndex = 20;
             this.ClienteIdLabel.Text = "Cliente";
-            // 
-            // ValorLabel
-            // 
-            this.ValorLabel.AutoSize = true;
-            this.ValorLabel.Location = new System.Drawing.Point(32, 116);
-            this.ValorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.ValorLabel.Name = "ValorLabel";
-            this.ValorLabel.Size = new System.Drawing.Size(41, 17);
-            this.ValorLabel.TabIndex = 36;
-            this.ValorLabel.Text = "Valor";
-            // 
-            // ValorNumericUpDown
-            // 
-            this.ValorNumericUpDown.Location = new System.Drawing.Point(132, 115);
-            this.ValorNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
-            this.ValorNumericUpDown.Name = "ValorNumericUpDown";
-            this.ValorNumericUpDown.Size = new System.Drawing.Size(280, 22);
-            this.ValorNumericUpDown.TabIndex = 37;
             // 
             // DevueltaLabel
             // 
@@ -164,11 +140,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.ValorNmericUpDown);
             this.groupBox1.Controls.Add(this.PrecioNumericUpDown);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.AgregarDetalleButton);
+            this.groupBox1.Controls.Add(this.NuevoProductoButton);
             this.groupBox1.Controls.Add(this.CantidadNumericUpDown);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -184,53 +158,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
             // 
-            // ValorNmericUpDown
-            // 
-            this.ValorNmericUpDown.Location = new System.Drawing.Point(243, 68);
-            this.ValorNmericUpDown.Name = "ValorNmericUpDown";
-            this.ValorNmericUpDown.Size = new System.Drawing.Size(71, 22);
-            this.ValorNmericUpDown.TabIndex = 12;
-            // 
             // PrecioNumericUpDown
             // 
-            this.PrecioNumericUpDown.Location = new System.Drawing.Point(286, 24);
+            this.PrecioNumericUpDown.Location = new System.Drawing.Point(238, 29);
             this.PrecioNumericUpDown.Name = "PrecioNumericUpDown";
             this.PrecioNumericUpDown.Size = new System.Drawing.Size(77, 22);
             this.PrecioNumericUpDown.TabIndex = 11;
             // 
-            // button2
+            // AgregarDetalleButton
             // 
-            this.button2.Location = new System.Drawing.Point(328, 66);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(35, 28);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AgregarDetalleButton.Location = new System.Drawing.Point(328, 66);
+            this.AgregarDetalleButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AgregarDetalleButton.Name = "AgregarDetalleButton";
+            this.AgregarDetalleButton.Size = new System.Drawing.Size(35, 28);
+            this.AgregarDetalleButton.TabIndex = 10;
+            this.AgregarDetalleButton.Text = "+";
+            this.AgregarDetalleButton.UseVisualStyleBackColor = true;
+            this.AgregarDetalleButton.Click += new System.EventHandler(this.AgregarDetalleButton_Click);
             // 
-            // button1
+            // NuevoProductoButton
             // 
-            this.button1.Location = new System.Drawing.Point(185, 25);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 28);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(197, 68);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 17);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Valor";
+            this.NuevoProductoButton.Location = new System.Drawing.Point(185, 25);
+            this.NuevoProductoButton.Margin = new System.Windows.Forms.Padding(4);
+            this.NuevoProductoButton.Name = "NuevoProductoButton";
+            this.NuevoProductoButton.Size = new System.Drawing.Size(35, 28);
+            this.NuevoProductoButton.TabIndex = 9;
+            this.NuevoProductoButton.Text = "+";
+            this.NuevoProductoButton.UseVisualStyleBackColor = true;
+            this.NuevoProductoButton.Click += new System.EventHandler(this.NuevoProductoButton_Click);
             // 
             // CantidadNumericUpDown
             // 
-            this.CantidadNumericUpDown.Location = new System.Drawing.Point(104, 57);
+            this.CantidadNumericUpDown.Location = new System.Drawing.Point(245, 66);
             this.CantidadNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
             this.CantidadNumericUpDown.Size = new System.Drawing.Size(68, 22);
@@ -239,7 +198,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 57);
+            this.label4.Location = new System.Drawing.Point(173, 66);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
@@ -249,7 +208,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(237, 25);
+            this.label3.Location = new System.Drawing.Point(242, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 17);
@@ -284,6 +243,7 @@
             this.ProductoComboBox.Name = "ProductoComboBox";
             this.ProductoComboBox.Size = new System.Drawing.Size(160, 24);
             this.ProductoComboBox.TabIndex = 0;
+            this.ProductoComboBox.SelectedIndexChanged += new System.EventHandler(this.ProductoComboBox_SelectedIndexChanged);
             // 
             // SubTotalLabel
             // 
@@ -370,6 +330,7 @@
             this.NuevoButton.TabIndex = 28;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = false;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click_1);
             // 
             // label6
             // 
@@ -397,22 +358,39 @@
             // 
             // SubTotalNumericUpDown
             // 
+            this.SubTotalNumericUpDown.DecimalPlaces = 2;
             this.SubTotalNumericUpDown.Location = new System.Drawing.Point(322, 540);
+            this.SubTotalNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.SubTotalNumericUpDown.Name = "SubTotalNumericUpDown";
             this.SubTotalNumericUpDown.Size = new System.Drawing.Size(89, 22);
             this.SubTotalNumericUpDown.TabIndex = 54;
-           
             // 
             // ItbisNumericUpDown
             // 
+            this.ItbisNumericUpDown.DecimalPlaces = 2;
             this.ItbisNumericUpDown.Location = new System.Drawing.Point(322, 568);
+            this.ItbisNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.ItbisNumericUpDown.Name = "ItbisNumericUpDown";
             this.ItbisNumericUpDown.Size = new System.Drawing.Size(89, 22);
             this.ItbisNumericUpDown.TabIndex = 55;
             // 
             // TotalNumericUpDown
             // 
+            this.TotalNumericUpDown.DecimalPlaces = 2;
             this.TotalNumericUpDown.Location = new System.Drawing.Point(322, 595);
+            this.TotalNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.TotalNumericUpDown.Name = "TotalNumericUpDown";
             this.TotalNumericUpDown.Size = new System.Drawing.Size(89, 22);
             this.TotalNumericUpDown.TabIndex = 56;
@@ -442,8 +420,6 @@
             this.Controls.Add(this.FechaLabel);
             this.Controls.Add(this.DevueltaNumericUpDown);
             this.Controls.Add(this.DevueltaLabel);
-            this.Controls.Add(this.ValorNumericUpDown);
-            this.Controls.Add(this.ValorLabel);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.EliminarButton);
@@ -453,11 +429,9 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "rVentas";
             this.Text = "rVentas";
-            ((System.ComponentModel.ISupportInitialize)(this.ValorNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DevueltaNumericUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ValorNmericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoDataGridView)).EndInit();
@@ -478,8 +452,6 @@
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Label DescripcionLabel;
         private System.Windows.Forms.Label ClienteIdLabel;
-        private System.Windows.Forms.Label ValorLabel;
-        private System.Windows.Forms.NumericUpDown ValorNumericUpDown;
         private System.Windows.Forms.Label DevueltaLabel;
         private System.Windows.Forms.NumericUpDown DevueltaNumericUpDown;
         private System.Windows.Forms.Label label1;
@@ -488,7 +460,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox ProductoComboBox;
         private System.Windows.Forms.DataGridView ProductoDataGridView;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown CantidadNumericUpDown;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -496,12 +467,11 @@
         private System.Windows.Forms.Label SubTotalLabel;
         private System.Windows.Forms.Label ItbisLabel;
         private System.Windows.Forms.Label TotalLabel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button NuevoProductoButton;
+        private System.Windows.Forms.Button AgregarDetalleButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox ClienteComboBox;
         private System.Windows.Forms.NumericUpDown VentaIdNumericUpDown;
-        private System.Windows.Forms.NumericUpDown ValorNmericUpDown;
         private System.Windows.Forms.NumericUpDown PrecioNumericUpDown;
         private System.Windows.Forms.NumericUpDown SubTotalNumericUpDown;
         private System.Windows.Forms.NumericUpDown ItbisNumericUpDown;

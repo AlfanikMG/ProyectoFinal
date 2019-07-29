@@ -80,11 +80,29 @@
     <Compile Include="Registros\rClientes.Designer.cs">
       <DependentUpon>rClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\rEntradaInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rEntradaInventario.Designer.cs">
+      <DependentUpon>rEntradaInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rProductos.Designer.cs">
+      <DependentUpon>rProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registros\rUsuarios.Designer.cs">
       <DependentUpon>rUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rVentas.Designer.cs">
+      <DependentUpon>rVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ListaUsuarios.cs">
       <AutoGen>True</AutoGen>
@@ -117,8 +135,17 @@
     <EmbeddedResource Include="Registros\rClientes.resx">
       <DependentUpon>rClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rEntradaInventario.resx">
+      <DependentUpon>rEntradaInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rProductos.resx">
+      <DependentUpon>rProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rVentas.resx">
+      <DependentUpon>rVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ListaUsuarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -146,6 +173,10 @@
       <Project>{b14d4f30-5a6b-4605-b1e1-7192d83e4fa4}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{28e81690-c95c-4428-b063-6e97e88c6ce1}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{cdd469ba-b9ac-470a-93c0-dc57a8989586}</Project>
       <Name>Entidades</Name>
@@ -165,6 +196,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user-remove-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New-Folder-black-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floppy-drive-3-12-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Users-Remove-User-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\klk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\klk1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo-moleculas-azules-ciencia-asistencia-medica_1017-15000.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo-moleculas-azules-ciencia-asistencia-medica_1017-150001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo-moleculas-azules-ciencia-asistencia-medica_1017-150002.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo-moleculas-azules-ciencia-asistencia-medica_1017-150003.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo-moleculas-azules-ciencia-asistencia-medica_1017-150004.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo-moleculas-azules-ciencia-asistencia-medica_1017-150005.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

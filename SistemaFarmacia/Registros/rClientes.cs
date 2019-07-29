@@ -103,8 +103,7 @@ namespace SistemaFarmacia.Registros
             CedulaTextBox.Text = clientes.Cedula;
             TelefonoTextBox.Text = clientes.Telefono;
             CelularTextBox.Text = clientes.Celular;
-            DireccionTextBox.Text = clientes.Direccion;
-            
+            DireccionTextBox.Text = clientes.Direccion;      
 
         }
 
@@ -115,43 +114,33 @@ namespace SistemaFarmacia.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            bool paso = false;
-            Repositorio<Clientes> db = new Repositorio<Clientes>();
-            Clientes clientes = new Clientes();
-            if (!Validar())
+            if(!Validar())
                 return;
+            bool paso = false;
+            Repositorio<Clientes> dbe = new  Repositorio<Clientes>();
+            Clientes clientes = new Clientes ();
 
             clientes = LlenarClase();
+
+
             if (ClientesIdNumericUpDown.Value == 0)
             {
-                paso = db.Guardar(clientes);
+                paso = dbe.Guardar(clientes);
             }
             else
             {
                 if (!ExisteEnLaBaseDeDatos())
                 {
-                    MessageBox.Show("No se puede modificar un Cliente que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(" No se puede modificar un cliente que no existe ", " Fallo ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (!ExisteEnLaBaseDeDatos())
-                {
-                    MessageBox.Show("No se puede modificar un Clientes que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                paso = db.Modificar(clientes);
+                paso = dbe.Modificar(clientes);
             }
-            if (!ExisteEnLaBaseDeDatos())
-            {
-                if (paso)
-                    MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
+            if(paso)
+                MessageBox.Show(" Guardado !! ", " Exito ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-            {
-                if (paso)
-                    MessageBox.Show("Modificado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else
-                    MessageBox.Show("No fue posible guardar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                MessageBox.Show(" No fue posible guardar !! ", " Fallo ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Limpiar();
         }
 
@@ -168,8 +157,6 @@ namespace SistemaFarmacia.Registros
                 MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MyErrorProvider.SetError(ClientesIdNumericUpDown, "No se puede eliminar un Cliente que no existe");
-
-
 
         }
 

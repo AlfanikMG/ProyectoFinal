@@ -63,6 +63,96 @@ namespace SistemaFarmacia.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap floppy_drive_3_12_icon {
+            get {
+                object obj = ResourceManager.GetObject("floppy-drive-3-12-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo_moleculas_azules_ciencia_asistencia_medica_1017_15000 {
+            get {
+                object obj = ResourceManager.GetObject("fondo-moleculas-azules-ciencia-asistencia-medica_1017-15000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo_moleculas_azules_ciencia_asistencia_medica_1017_150001 {
+            get {
+                object obj = ResourceManager.GetObject("fondo-moleculas-azules-ciencia-asistencia-medica_1017-150001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo_moleculas_azules_ciencia_asistencia_medica_1017_150002 {
+            get {
+                object obj = ResourceManager.GetObject("fondo-moleculas-azules-ciencia-asistencia-medica_1017-150002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo_moleculas_azules_ciencia_asistencia_medica_1017_150003 {
+            get {
+                object obj = ResourceManager.GetObject("fondo-moleculas-azules-ciencia-asistencia-medica_1017-150003", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo_moleculas_azules_ciencia_asistencia_medica_1017_150004 {
+            get {
+                object obj = ResourceManager.GetObject("fondo-moleculas-azules-ciencia-asistencia-medica_1017-150004", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo_moleculas_azules_ciencia_asistencia_medica_1017_150005 {
+            get {
+                object obj = ResourceManager.GetObject("fondo-moleculas-azules-ciencia-asistencia-medica_1017-150005", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap klk {
+            get {
+                object obj = ResourceManager.GetObject("klk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap klk1 {
+            get {
+                object obj = ResourceManager.GetObject("klk1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap New {
             get {
                 object obj = ResourceManager.GetObject("New", resourceCulture);
@@ -73,9 +163,39 @@ namespace SistemaFarmacia.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap New_Folder_black_icon {
+            get {
+                object obj = ResourceManager.GetObject("New-Folder-black-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap New1 {
+            get {
+                object obj = ResourceManager.GetObject("New1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap save_icon {
             get {
                 object obj = ResourceManager.GetObject("save-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search_icon {
+            get {
+                object obj = ResourceManager.GetObject("Search-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +216,16 @@ namespace SistemaFarmacia.Properties {
         internal static System.Drawing.Bitmap user_remove_icon {
             get {
                 object obj = ResourceManager.GetObject("user-remove-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Users_Remove_User_icon {
+            get {
+                object obj = ResourceManager.GetObject("Users-Remove-User-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

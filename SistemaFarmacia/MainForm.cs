@@ -36,5 +36,24 @@ namespace SistemaFarmacia
             rClientes clientes = new rClientes();
             clientes.Show();
         }
+
+        private void RegistrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegistroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rProductos rProductos = new rProductos();
+            rProductos.Show();
+
+        }
+
+        private void RegistroDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rVentas rVentas = new rVentas();
+            rVentas.Show();
+
+        }
     }
 }

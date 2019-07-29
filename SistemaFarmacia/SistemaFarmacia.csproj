@@ -236,5 +236,14 @@
   <ItemGroup>
     <None Include="Resources\fondo-moleculas-azules-ciencia-asistencia-medica_1017-150005.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Status-printer-printing-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

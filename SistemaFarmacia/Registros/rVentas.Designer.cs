@@ -368,6 +368,7 @@
             this.SubTotalNumericUpDown.Name = "SubTotalNumericUpDown";
             this.SubTotalNumericUpDown.Size = new System.Drawing.Size(89, 22);
             this.SubTotalNumericUpDown.TabIndex = 54;
+            
             // 
             // ItbisNumericUpDown
             // 

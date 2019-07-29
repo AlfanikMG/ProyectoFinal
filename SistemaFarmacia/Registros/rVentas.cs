@@ -204,7 +204,7 @@ namespace SistemaFarmacia.Registros
 
             if (VentaIdNumericUpDown.Value == 0)
             {
-                paso = dbe.Guardar(ventas);
+                paso = VentaBLL.Guardar(ventas);
             }
             else
             {
@@ -213,7 +213,7 @@ namespace SistemaFarmacia.Registros
                     MessageBox.Show("No se puede modificar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                paso = dbe.Modificar(ventas);
+                paso = VentaBLL.Modificar(ventas);
             }
 
             if (paso)
@@ -317,5 +317,7 @@ namespace SistemaFarmacia.Registros
 
 
         }
+
+        
     }
 }

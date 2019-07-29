@@ -16,10 +16,7 @@ namespace SistemaFarmacia.Registros
         {
             InitializeComponent();
         }
-     rEntradaInventario LlenarClase privado()
-        {
-          
-        }
+    
 
 
     }

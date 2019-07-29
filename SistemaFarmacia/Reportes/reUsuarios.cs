@@ -16,5 +16,7 @@ namespace SistemaFarmacia.Reportes
         {
             InitializeComponent();
         }
+
+        
     }
 }

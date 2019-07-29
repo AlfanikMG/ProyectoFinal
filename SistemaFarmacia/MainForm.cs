@@ -55,5 +55,27 @@ namespace SistemaFarmacia
             rVentas.Show();
 
         }
+
+        private void ConsultaDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cVentas cVentas = new cVentas();
+            cVentas.Show();
+
+
+        }
+
+        private void ConsultaDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cCliente cCliente = new cCliente();
+            cCliente.Show();
+
+        }
+
+        private void ConsultaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cProducto cProducto = new cProducto();
+            cProducto.Show();
+
+        }
     }
 }

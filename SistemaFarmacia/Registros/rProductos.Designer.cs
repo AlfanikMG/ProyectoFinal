@@ -207,7 +207,7 @@
             this.BuscarButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BuscarButton.Image = global::SistemaFarmacia.Properties.Resources.Search_icon;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(323, 15);
+            this.BuscarButton.Location = new System.Drawing.Point(323, 16);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(103, 38);

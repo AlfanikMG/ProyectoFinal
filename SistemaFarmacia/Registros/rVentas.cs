@@ -20,8 +20,8 @@ namespace SistemaFarmacia.Registros
             InitializeComponent();
             this.Detalle = new List<ProductoDetalles>();
             ProductoComboBox.Text = null;
-            
 
+            LLenarClientes();
             LLenarProducto();
         }
         private void CargaGrid()
@@ -39,6 +39,15 @@ namespace SistemaFarmacia.Registros
             }
         }
 
+        private void LLenarClientes()
+        {
+            Repositorio<Clientes> db = new Repositorio<Clientes>(new DAL.SistemaFarmaciaContexto());
+            var lista = new List<Clientes>();
+            lista = db.GetList(l => true);
+            ClienteComboBox.DataSource = lista;
+            ClienteComboBox.DisplayMember = "Nombres";
+            ClienteComboBox.ValueMember = "ClientesId";
+        }
 
         private void LLenarProducto()
         {

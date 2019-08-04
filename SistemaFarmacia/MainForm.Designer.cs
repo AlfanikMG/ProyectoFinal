@@ -36,11 +36,11 @@
             this.registroDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,20 +116,6 @@
             this.consultaDeUsuarioToolStripMenuItem.Text = "Consulta de usuarios";
             this.consultaDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.ConsultaDeUsuarioToolStripMenuItem_Click);
             // 
-            // reporteToolStripMenuItem
-            // 
-            this.reporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reporteDeUsuariosToolStripMenuItem});
-            this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
-            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
-            this.reporteToolStripMenuItem.Text = "Reporte";
-            // 
-            // reporteDeUsuariosToolStripMenuItem
-            // 
-            this.reporteDeUsuariosToolStripMenuItem.Name = "reporteDeUsuariosToolStripMenuItem";
-            this.reporteDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.reporteDeUsuariosToolStripMenuItem.Text = "Reporte de usuarios";
-            // 
             // consultaDeVentasToolStripMenuItem
             // 
             this.consultaDeVentasToolStripMenuItem.Name = "consultaDeVentasToolStripMenuItem";
@@ -151,6 +137,20 @@
             this.consultaDeProductosToolStripMenuItem.Text = "Consulta de Productos";
             this.consultaDeProductosToolStripMenuItem.Click += new System.EventHandler(this.ConsultaDeProductosToolStripMenuItem_Click);
             // 
+            // reporteToolStripMenuItem
+            // 
+            this.reporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteDeUsuariosToolStripMenuItem});
+            this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
+            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.reporteToolStripMenuItem.Text = "Reporte";
+            // 
+            // reporteDeUsuariosToolStripMenuItem
+            // 
+            this.reporteDeUsuariosToolStripMenuItem.Name = "reporteDeUsuariosToolStripMenuItem";
+            this.reporteDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.reporteDeUsuariosToolStripMenuItem.Text = "Reporte de usuarios";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -158,6 +158,7 @@
             this.BackgroundImage = global::SistemaFarmacia.Properties.Resources.klk;
             this.ClientSize = new System.Drawing.Size(1151, 593);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";

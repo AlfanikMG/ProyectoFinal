@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -129,6 +130,8 @@ namespace SistemaFarmacia.Registros
             usuarios = LlenarClase();
             if (IdNumericUpDown.Value == 0)
             {
+                if (!ValidarRepetir())
+                    return;
                 paso = db.Guardar(usuarios);
             }
             else
@@ -190,6 +193,59 @@ namespace SistemaFarmacia.Registros
                 MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MyErrorProvider.SetError(IdNumericUpDown, "No se puede eliminar una asignatura que no existe");
+        }
+        public static bool RepetirUser(string descripcion)
+        {
+            bool paso = false;
+            SistemaFarmaciaContexto db = new SistemaFarmaciaContexto();
+
+            try
+            {
+                if (db.Usuarios.Any(p => p.Usuario.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+        public static bool RepetirEmail(string descripcion)
+        {
+            bool paso = false;
+            SistemaFarmaciaContexto db = new SistemaFarmaciaContexto();
+
+            try
+            {
+                if (db.Usuarios.Any(p => p.Email.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+        private bool ValidarRepetir()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (RepetirUser(UsuarioTextBox.Text))
+            {
+                MyErrorProvider.SetError(UsuarioTextBox, "No se debe repetir los usuarios.");
+                paso = false;
+            }
+            if (RepetirEmail(EmailTextBox.Text))
+            {
+                MyErrorProvider.SetError(EmailTextBox, "No se debe usar el mismo email que otro.");
+                paso = false;
+            }
+            return paso;
         }
     }
 }

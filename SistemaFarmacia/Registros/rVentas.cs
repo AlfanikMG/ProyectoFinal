@@ -339,7 +339,7 @@ namespace SistemaFarmacia.Registros
                 //LlenarImporte();
             }
             LlenarPrecio();
-        }
+        }  
 
        
         private void AgregarDetalleButton_Click(object sender, EventArgs e)

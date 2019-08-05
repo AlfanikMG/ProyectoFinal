@@ -14,9 +14,9 @@ using Entidades;
 
 namespace SistemaFarmacia.Registros
 {
-    public partial class rProductos : Form
+    public partial class rProducto : Form
     {
-        public rProductos()
+        public rProducto()
         {
             InitializeComponent();
         }

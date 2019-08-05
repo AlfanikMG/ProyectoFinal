@@ -48,7 +48,7 @@ namespace SistemaFarmacia
 
         private void RegistroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rProductos rProductos = new rProductos();
+            rProducto rProductos = new rProducto();
             rProductos.MdiParent = this;
             rProductos.Show();
 

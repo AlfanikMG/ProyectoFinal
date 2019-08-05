@@ -98,6 +98,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registros\rProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rProductos.Designer.cs">
+      <DependentUpon>rProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,12 +115,6 @@
     </Compile>
     <Compile Include="Registros\rEntradaInventario.Designer.cs">
       <DependentUpon>rEntradaInventario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Registros\rProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registros\rProductos.Designer.cs">
-      <DependentUpon>rProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Registros\rUsuarios.cs">
       <SubType>Form</SubType>
@@ -132,6 +132,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListadoVentas.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\ListaUsuarios.cs">
       <AutoGen>True</AutoGen>
@@ -139,11 +140,23 @@
       <DependentUpon>ListaUsuarios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\ReciboVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReciboVentas.Designer.cs">
+      <DependentUpon>ReciboVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\reUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\reUsuarios.Designer.cs">
       <DependentUpon>reUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rProductos.Designer.cs">
+      <DependentUpon>rProductos.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Consultas\cCliente.resx">
       <DependentUpon>cCliente.cs</DependentUpon>
@@ -173,14 +186,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Registros\rProductos.resx">
+      <DependentUpon>rProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registros\rClientes.resx">
       <DependentUpon>rClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rEntradaInventario.resx">
       <DependentUpon>rEntradaInventario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Registros\rProductos.resx">
-      <DependentUpon>rProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>
@@ -196,8 +209,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListaUsuarios.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReciboVentas.resx">
+      <DependentUpon>ReciboVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reUsuarios.resx">
       <DependentUpon>reUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rProductos.resx">
+      <DependentUpon>rProductos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

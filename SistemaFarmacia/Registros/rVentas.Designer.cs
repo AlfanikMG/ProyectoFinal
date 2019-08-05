@@ -167,7 +167,7 @@
             // 
             // AgregarDetalleButton
             // 
-            this.AgregarDetalleButton.Location = new System.Drawing.Point(328, 66);
+            this.AgregarDetalleButton.Location = new System.Drawing.Point(328, 63);
             this.AgregarDetalleButton.Margin = new System.Windows.Forms.Padding(4);
             this.AgregarDetalleButton.Name = "AgregarDetalleButton";
             this.AgregarDetalleButton.Size = new System.Drawing.Size(35, 28);
@@ -189,16 +189,16 @@
             // 
             // CantidadNumericUpDown
             // 
-            this.CantidadNumericUpDown.Location = new System.Drawing.Point(245, 66);
+            this.CantidadNumericUpDown.Location = new System.Drawing.Point(238, 66);
             this.CantidadNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
-            this.CantidadNumericUpDown.Size = new System.Drawing.Size(68, 22);
+            this.CantidadNumericUpDown.Size = new System.Drawing.Size(77, 22);
             this.CantidadNumericUpDown.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(173, 66);
+            this.label4.Location = new System.Drawing.Point(169, 66);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
@@ -368,7 +368,6 @@
             this.SubTotalNumericUpDown.Name = "SubTotalNumericUpDown";
             this.SubTotalNumericUpDown.Size = new System.Drawing.Size(89, 22);
             this.SubTotalNumericUpDown.TabIndex = 54;
-            
             // 
             // ItbisNumericUpDown
             // 

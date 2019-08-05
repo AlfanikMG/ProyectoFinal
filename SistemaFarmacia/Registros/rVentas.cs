@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using Entidades;
+using SistemaFarmacia.Reportes;
 
 namespace SistemaFarmacia.Registros
 {
@@ -166,6 +167,29 @@ namespace SistemaFarmacia.Registros
             }
             SubTotalNumericUpDown.Value = subtotal;
         }
+
+        private bool Existe()
+        {
+            bool estado = false;
+            List<ProductoDetalles> detalle = new List<ProductoDetalles>();
+
+            if (ProductoDataGridView.DataSource != null)
+            {
+                detalle = (List<ProductoDetalles>)ProductoDataGridView.DataSource;
+            }
+
+            string descripcion = string.Empty;
+            foreach (var item in detalle)
+            {
+                descripcion = item.Producto;
+            }
+            if (descripcion == ProductoComboBox.Text)
+            {
+                MessageBox.Show("Produco ha sido agregado!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                estado = true;
+            }
+            return estado;
+        }
         
         public string id_mat;
         private bool ExisteEnGrid()
@@ -180,7 +204,7 @@ namespace SistemaFarmacia.Registros
                 {
                     if (Convert.ToInt16(ProductoDataGridView.Rows[i].Cells["Id"].Value) == Convert.ToInt16(id_mat))
                     {
-                        MessageBox.Show("El material ya ha sido ingresado");
+                        MessageBox.Show("El Producto ya ha sido ingresado");
                         paso = false;
 
                     }
@@ -193,34 +217,78 @@ namespace SistemaFarmacia.Registros
         }
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            if (!Validar())
+            Repositorio<Ventas> repositorio = new Repositorio<Ventas>();
+            Ventas venta;
+            bool Paso = false;
+
+            if (Validar())
+            {
+                MessageBox.Show("Favor revisar todos los campos!!", "Validación!!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-
-            bool paso = false;
-            Repositorio<Ventas> dbe = new Repositorio<Ventas>();
-            Ventas ventas = new Ventas();
-
-            ventas = LlenarClase();
-
-            if (VentaIdNumericUpDown.Value == 0)
-            {
-                paso = VentaBLL.Guardar(ventas);
             }
+
+            //venta = LlenarClase();
+
+           
             else
             {
-                if (!ExisteEnLaBaseDeDatos())
+                venta = LlenarClase();
+                Repositorio<Ventas> repositorioD = new Repositorio<Ventas>();
+                int id = Convert.ToInt32(VentaIdNumericUpDown.Value);
+                Ventas ven = repositorioD.Buscar(id);
+
+                if (ven != null)
                 {
-                    MessageBox.Show("No se puede modificar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    Paso = repositorioD.Modificar(venta);
+                    MessageBox.Show("Modificado!!", "Exito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                paso = VentaBLL.Modificar(ventas);
+                else
+                    MessageBox.Show("Id no existe", "Falló",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if (paso)
-                MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ReciboVentas ReciboVentas = new ReciboVentas();
+            ReciboVentas.Show();
+
+            if (Paso)
+            {
+                Limpiar();
+            }
             else
-                MessageBox.Show("No fue posible guardar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            Limpiar();
+                MessageBox.Show("No se pudo guardar!!", "Fallo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //if (!Validar())
+            //    return;
+
+            //bool paso = false;
+            //Repositorio<Ventas> dbe = new Repositorio<Ventas>();
+            //Ventas ventas = new Ventas();
+
+            //ventas = LlenarClase();
+
+            //if (VentaIdNumericUpDown.Value == 0)
+            //{
+            //    paso = VentaBLL.Guardar(ventas);
+            //}
+            //else
+            //{
+            //    if (!ExisteEnLaBaseDeDatos())
+            //    {
+            //        MessageBox.Show("No se puede modificar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return;
+            //    }
+            //    paso = VentaBLL.Modificar(ventas);
+            //}
+            //ReciboVentas ReciboVentas = new ReciboVentas();
+            //ReciboVentas.Show();
+
+            //if (paso)
+            //    MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //else
+            //    MessageBox.Show("No fue posible guardar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //Limpiar();
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
@@ -281,11 +349,9 @@ namespace SistemaFarmacia.Registros
             if (ProductoDataGridView.DataSource != null)
                 this.Detalle = (List<ProductoDetalles>)ProductoDataGridView.DataSource;
 
-            if (ExisteEnGrid() == false)
+            if (Existe())
             {
-                MyerrorProvider.SetError(ProductoComboBox, "El Material ya existe en el Grid");
                 ProductoComboBox.Focus();
-
                 return;
             }
 
@@ -311,7 +377,7 @@ namespace SistemaFarmacia.Registros
 
         private void NuevoProductoButton_Click(object sender, EventArgs e)
         {
-            rProductos productos = new rProductos();
+            rProducto productos = new rProducto();
             productos.ShowDialog();
             LLenarProducto();
 
